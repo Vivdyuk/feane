@@ -1,0 +1,120 @@
+[
+  {
+    "id": "1",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f1.png"
+  },  {
+    "id": "2",
+    "name":  "Delicious Burger",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Burger",
+    "price": 12,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f2.png"
+  },  {
+    "id": "3",
+    "name":  "Delicious Pasta",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pasta",
+    "price": 9,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f3.png"
+  },  {
+    "id": "4",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f4.png"
+  },  {
+    "id": "5",
+    "name":  "French Fries",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Fries",
+    "price": 8,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f5.png"
+  },  {
+    "id": "6",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f6.png"
+  },  {
+    "id": "7",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f7.png"
+  },  {
+    "id": "8",
+    "name":  "Delicious Pasta",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pasta",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f8.png"
+  },  {
+    "id": "9",
+    "name":  "Delicious Burger",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Burger",
+    "price": 12,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f9.png"
+  },  {
+    "id": "10",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f10.png"
+  },  {
+    "id": "11",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f11.png"
+  },  {
+    "id": "12",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f12.png"
+  },  {
+    "id": "13",
+    "name":  "Delicious Pizza",
+    "description":"Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque",
+    "type": "Pizza",
+    "price": 15,
+    "isActive": true,
+    "isAvailable": true,
+    "imgUrl": "f13.png"
+  }
+]

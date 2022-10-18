@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Tasty Thursdays",
+    "imgSrc": "o1.jpg",
+    "discount": 20,
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Tasty Fridays",
+    "imgSrc": "o3.jpg",
+    "discount": 100,
+    "isActive": false
+  },
+  {
+    "id": 3,
+    "name": "Pizza Days",
+    "imgSrc": "o2.jpg",
+    "discount": 15,
+    "isActive": true
+
+  }
+]
