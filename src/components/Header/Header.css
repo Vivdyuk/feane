@@ -219,4 +219,9 @@
     top: 0;
 }
 
+.header_section {
+    background-image: url('/src/images/hero-bg.jpg');
+    overflow: hidden;
+}
+
 /*end header section*/

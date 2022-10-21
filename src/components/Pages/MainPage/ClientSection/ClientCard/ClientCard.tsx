@@ -1,6 +1,7 @@
 import React from 'react';
 import { IClientComment } from "../ClientSection";
 
+
 interface ClientCardProps {
     client: IClientComment,
 }

@@ -1,6 +1,30 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { GoogleMap, useJsApiLoader, GoogleMapProps } from '@react-google-maps/api';
 
 export const BookSection = () => {
+    const { isLoaded } = useJsApiLoader({
+        id: 'google-map-script',
+        googleMapsApiKey: "YOUR_API_KEY"
+    });
+
+    const [map, setMap] = useState<google.maps.Map | null>(null)
+
+    const center = {
+        lat: -3.745,
+        lng: -38.523
+    }
+
+    const onLoad = useCallback((map: google.maps.Map) => {
+        const bounds = new window.google.maps.LatLngBounds(center);
+        map.fitBounds(bounds);
+        setMap(map)
+    }, [])
+
+
+    const onUnmount = useCallback((map: google.maps.Map) => {
+        setMap(null)
+    }, [])
+
     return (
         <section className="book_section layout_padding">
             <div className="container">
@@ -54,7 +78,16 @@ export const BookSection = () => {
                     </div>
                     <div className="col-md-6">
                         <div className="map_container ">
-                            <div id="googleMap"></div>
+                            { isLoaded ?
+                                <GoogleMap
+                                    onLoad={onLoad}
+                                    onUnmount={onUnmount}
+                                >
+
+                                </GoogleMap>
+                                :
+                                <div id="googleMap"></div>
+                            }
                         </div>
                     </div>
                 </div>

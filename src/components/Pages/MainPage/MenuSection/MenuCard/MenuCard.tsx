@@ -5,6 +5,7 @@ export interface IMenuItem {
     name: string,
     description: string,
     imgUrl: string,
+    type: string,
     price: number,
     isActive: boolean,
     isAvailable: boolean

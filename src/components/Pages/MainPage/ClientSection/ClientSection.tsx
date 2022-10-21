@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { ClientCard } from "./ClientCard/ClientCard";
 import OwlCarousel from 'react-owl-carousel';
+import 'font-awesome/css/font-awesome.min.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 
 export interface IClientComment {
     id: number,
@@ -12,6 +14,31 @@ export interface IClientComment {
     timestamp: string | Date
 }
 
+const owlCarouselConfig = {
+    loop: true,
+    margin: 0,
+    autoplay: true,
+    dots: false,
+    autoplayTimeout: 2000,
+    autoplaySpeed: 1500,
+    autoplayHoverPause: true,
+    nav: true,
+    navText: [
+        "<i class='fa fa-angle-left' aria-hidden='true'></i>",
+        "<i class='fa fa-angle-right' aria-hidden='true'></i>"
+    ],
+    responsive: {
+        0: {
+            items: 1
+        },
+        768: {
+            items: 2
+        },
+        1000: {
+            items: 2
+        }
+    }
+}
 
 export const ClientSection = () => {
     const [comments, setComments] = useState(require('jsons/clients.json'));
@@ -25,7 +52,7 @@ export const ClientSection = () => {
                     </h2>
                 </div>
                 <div className="carousel-wrap row ">
-                    <OwlCarousel className='owl-theme' loop margin={ 10 } nav>
+                    <OwlCarousel className='owl-theme' { ...owlCarouselConfig } >
                         { comments.map((comment: IClientComment) => <ClientCard key={ comment.id }
                                                                                 client={ comment }/>) }
                     </OwlCarousel>

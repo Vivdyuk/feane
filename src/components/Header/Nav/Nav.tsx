@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLinkEnums } from "./navLinkEnums";
 import { NavItem } from "./NavLink/NavItem";
 import { NavLink } from "react-router-dom";
+import './Nav.css';
 
 export const Nav = () => {
 
@@ -22,7 +23,7 @@ export const Nav = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav  mx-auto ">
                     { Object.entries(NavLinkEnums).map(([key, value]) => (
-                        <NavItem key={key} name={ value } link={key.toLocaleLowerCase()}/>
+                        <NavItem key={value} name={ key } link={value.toLocaleLowerCase()}/>
                     )) }
                 </ul>
                 <div className="user_option">

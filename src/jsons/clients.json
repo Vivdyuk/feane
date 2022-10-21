@@ -9,8 +9,22 @@
   {
     "id": 2,
     "imgUrl": "client2.jpg",
+    "name": "Mike  UN Hamell",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    "timestamp": "2020-05-25"
+  },
+  {
+    "id": 3,
+    "imgUrl": "client2.jpg",
     "name": "Mike Hamell",
     "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     "timestamp": "2020-05-25"
+  },
+  {
+    "id": 4,
+    "imgUrl": "client1.jpg",
+    "name": "Moana UN Michell",
+    "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+    "timestamp": "2022-06-30"
   }
 ]

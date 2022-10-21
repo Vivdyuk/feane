@@ -883,3 +883,8 @@ a:focus {
     width: 50%;
   }
 }
+
+.bg-box {
+  transform: translateY(-88px);
+  z-index: -1;
+}
