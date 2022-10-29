@@ -3,6 +3,7 @@ import { NavLinkEnums } from "./navLinkEnums";
 import { NavItem } from "./NavLink/NavItem";
 import { NavLink } from "react-router-dom";
 import './Nav.css';
+import { YellowButton } from "../../Shared/YellowButton/YellowButton";
 
 export const Nav = () => {
 
@@ -91,9 +92,7 @@ export const Nav = () => {
                             <i className="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </form>
-                    <a href="" className="order_online">
-                        Order Online
-                    </a>
+                    <YellowButton to={"#"} className={"order_online"} text={"Order Online"} />
                 </div>
             </div>
         </nav>

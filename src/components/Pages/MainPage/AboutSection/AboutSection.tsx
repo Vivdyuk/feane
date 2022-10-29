@@ -1,8 +1,14 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { NavLinkEnums } from "../../../Header/Nav/navLinkEnums";
+import { YellowButton } from "../../../Shared/YellowButton/YellowButton";
 
 export const AboutSection = () => {
+    const navigate = useNavigate();
+
+    const handleClick =() => {
+        navigate(NavLinkEnums.ABOUT)
+    }
     return (
         <section className="about_section layout_padding">
             <div className="container  ">
@@ -29,9 +35,7 @@ export const AboutSection = () => {
                                 embarrassing hidden in
                                 the middle of text. All
                             </p>
-                            <Link to={NavLinkEnums.ABOUT}>
-                                Read More
-                            </Link>
+                            <YellowButton onClick={handleClick} className={""} text={"Read More"} />
                         </div>
                     </div>
                 </div>

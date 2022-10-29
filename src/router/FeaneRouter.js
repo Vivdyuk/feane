@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, Route, Routes } from 'react-router-dom';
 import { NavLinkEnums } from '../components/Header/Nav/navLinkEnums';
 import FadeIn from 'react-fade-in';
+import { Loader } from '../components/Shared/Loader/Loader';
 
 const HomePageLazy = React.lazy(() => import('../components/Pages/MainPage/MainPage').then(module => ({default: module.MainPage})));
 const BookPageLazy = React.lazy(() => import('../components/Pages/BookPage/BookPage').then(module => ({default: module.BookPage})));
@@ -10,16 +11,19 @@ const MenuPageLazy = React.lazy(() => import('../components/Pages/MenuPage/MenuP
 
 export const FeaneRouter = () => {
     const {HOME, MENU, BOOK_TABLE, ABOUT} = NavLinkEnums;
+
     return (
         <FadeIn>
 
 
-            <Suspense fallback={<div style={{width: 200, height: 200}}>Loading . . .</div>}>
+            <Suspense fallback={<Loader/>}>
                 <Routes>
                     <Route path={HOME} element={<HomePageLazy/>}/>
                     <Route path={MENU} element={<MenuPageLazy/>}/>
+                    <Route path={`${MENU}?isActive=:isActive&type=:type`} element={<MenuPageLazy/>}/>
                     <Route path={ABOUT} element={<AboutPageLazy/>}/>
                     <Route path={BOOK_TABLE} element={<BookPageLazy/>}/>
+                    <Route path={'Loader'} element={<Loader/>}/>
                     <Route path="*" element={<HomePageLazy/>}/>
                 </Routes>
             </Suspense>

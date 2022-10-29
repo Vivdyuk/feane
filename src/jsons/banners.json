@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "header": "Fast Food Restaurant",
+    "body": "Doloremque, itaque aperiam facilis rerum, commodi, temporibu sapiente ad mollitia  quam quisquam esse error unde. Tempora ex doloremque, labore, sunt epellat dolore, iste magni quos nihil ducimus libero ipsam.",
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "header": "Best burgers in the town",
+    "body": "Doloremque, itaque aperiam facilis rerum, commodi, temporibu sapiente ad mollitia  quam quisquam esse error unde. Tempora ex doloremque, labore, sunt epellat dolore, iste magni quos nihil ducimus libero ipsam.",
+    "isActive": true
+  },
+  {
+    "id": 3,
+    "header": "Last but bot least!",
+    "body": "Doloremque, itaque aperiam facilis rerum, commodi, temporibu sapiente ad mollitia  quam quisquam esse error unde. Tempora ex doloremque, labore, sunt epellat dolore, iste magni quos nihil ducimus libero ipsam.",
+    "isActive": true
+  },
+  {
+    "id": 4,
+    "header": "This one is old",
+    "body": "Doloremque, itaque aperiam facilis rerum, commodi, temporibu sapiente ad mollitia  quam quisquam esse error unde. Tempora ex doloremque, labore, sunt epellat dolore, iste magni quos nihil ducimus libero ipsam.",
+    "isActive": false
+  }
+]

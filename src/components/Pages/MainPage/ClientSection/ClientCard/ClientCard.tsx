@@ -21,7 +21,7 @@ export const ClientCard = ({client: { name, imgUrl, comment, timestamp}}: Client
                     </p>
                 </div>
                 <div className="img-box">
-                    <img src={ require(`images/${imgUrl}`) } alt={name} className="box-img"/>
+                    <img src={ imgUrl } alt={name} className="box-img"/>
                 </div>
             </div>
         </div>

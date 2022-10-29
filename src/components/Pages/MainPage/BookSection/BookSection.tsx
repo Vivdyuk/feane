@@ -1,10 +1,15 @@
-import React, { useCallback, useState } from 'react';
+import React, { FormEventHandler, useCallback, useState } from 'react';
 import { GoogleMap, useJsApiLoader, GoogleMapProps } from '@react-google-maps/api';
+import { Notify } from "notiflix";
+import { Input } from "../../../Shared/Input/Input";
+import { capitalize, INPUT_TYPES } from "../../../../utils/Stringutils";
 
 export const BookSection = () => {
+    const inputNames = ['name', 'number', 'email']
+
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "YOUR_API_KEY"
+        googleMapsApiKey: ""
     });
 
     const [map, setMap] = useState<google.maps.Map | null>(null)
@@ -37,39 +42,40 @@ export const BookSection = () => {
                     <div className="col-md-6">
                         <div className="form_container">
                             <form action="">
-                                <div>
-                                    <input type="text" className="form-control" placeholder="Your Name"/>
-                                </div>
-                                <div>
-                                    <input type="text" className="form-control" placeholder="Phone Number"/>
-                                </div>
-                                <div>
-                                    <input type="email" className="form-control" placeholder="Your Email"/>
-                                </div>
-                                <div>
-                                    <select className="form-control nice-select wide">
-                                        <option defaultValue={ "" } disabled>
-                                            How many persons?
-                                        </option>
-                                        <option value="2">
-                                            2
-                                        </option>
-                                        <option value="3">
-                                            3
-                                        </option>
-                                        <option value="4">
-                                            4
-                                        </option>
-                                        <option value="5">
-                                            5
-                                        </option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <input type="date" className="form-control"/>
-                                </div>
+                                { inputNames.map((name) => (
+                                        <Input
+                                            key={ name }
+                                            type={ INPUT_TYPES.find(type => name === type) || "text" }
+                                            name={ name }
+                                            placeholder={ `Your ${ capitalize(name) }` }
+                                            className="form-control"
+                                        />
+                                    )
+                                ) }
+                                <select className="form-control nice-select wide">
+                                    <option defaultValue={ "" } disabled>
+                                        How many persons?
+                                    </option>
+                                    <option value="2">
+                                        2
+                                    </option>
+                                    <option value="3">
+                                        3
+                                    </option>
+                                    <option value="4">
+                                        4
+                                    </option>
+                                    <option value="5">
+                                        5
+                                    </option>
+                                </select>
+                                { <Input
+                                    type={ 'date' }
+                                    name={ 'date' }
+                                    className={ 'form-control' }
+                                /> }
                                 <div className="btn_box">
-                                    <button>
+                                    <button type={ "submit" }>
                                         Book Now
                                     </button>
                                 </div>
@@ -80,8 +86,8 @@ export const BookSection = () => {
                         <div className="map_container ">
                             { isLoaded ?
                                 <GoogleMap
-                                    onLoad={onLoad}
-                                    onUnmount={onUnmount}
+                                    onLoad={ onLoad }
+                                    onUnmount={ onUnmount }
                                 >
 
                                 </GoogleMap>

@@ -46,7 +46,7 @@ export const Footer = () => {
                             </p>
                             <ul className="footer_social">
                                 { Object.entries(FooterLinksEnum).map(([name, link]) => (
-                                    <li key={ name }>
+                                    <li key={ name } style={{listStyle: "none"}}>
                                         <FooterSocialLink link={ link } name={ name.toLocaleLowerCase() }/>
                                     </li>
                                 )) }

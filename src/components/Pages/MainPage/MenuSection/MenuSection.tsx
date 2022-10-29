@@ -1,29 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IMenuItem, MenuCard } from "./MenuCard/MenuCard";
-import { containsIgnoreCase } from "../../../../utils/Stringutils";
 import { Notify } from "notiflix";
-import FadeIn from "react-fade-in";
+import { YellowButton } from "../../../Shared/YellowButton/YellowButton";
+import { getData } from "../../../../utils/fetchUtils";
+import { useLocation, useSearchParams } from "react-router-dom";
+import { IMenuDataFilters } from "./IMenuDataFilters";
+import { FilterButton } from "../../../Shared/FilterButton/FilterButton";
 
-export const MenuSection = () => {
-
-    const initialMenu: IMenuItem[] = require('jsons/menu.json')
-    const [menu, setMenu] = useState(initialMenu);
+export const MenuSection = React.memo(() => {
     const [isShowMoreButtonVisible, setIsShowMoreButtonVisible] = useState(true);
+    const [menu, setMenu] = useState<IMenuItem[]>([]);
+    const [searchParams, setSearchParams] = useSearchParams({
+        isActive: 'true',
+        type: "Burger"
+    })
+    const location = useLocation();
+
+    useEffect(() => {
+        setSearchParams(location.search)
+        getData('menu', searchParams).then(setMenu);
+    }, [searchParams])
 
     const handleCLick = (event: React.MouseEvent<HTMLLIElement>) => {
-        const { dataset: { filter: dataFilter }, classList } = event.target as HTMLElement;
-        setMenu(initialMenu.filter((dish: IMenuItem) => dataFilter === "*" ?
-            dish
-            : containsIgnoreCase(dish.type, dataFilter || '')
-        ))
 
-        // @ts-ignore
-        new Array(...event.target.parentElement.childNodes).forEach((el) => {
-            el.classList.remove('active')
+        const { dataset: { filter: dataFilter } } = event.target as HTMLElement;
+
+        setSearchParams({
+            ...searchParams,
+            type: dataFilter
         });
-        classList.add('active');
-        Notify.info(`Sorted by ${ dataFilter }`)
 
+        Notify.info(`Sorted by ${ dataFilter }`)
     }
 
     const handleNotify = (event: React.MouseEvent) => {
@@ -42,11 +49,14 @@ export const MenuSection = () => {
                 </div>
 
                 <ul className="filters_menu">
-                    <li onClick={ handleCLick } className={ "active" } data-filter="*">All</li>
-                    <li onClick={ handleCLick } data-filter="burger">Burger</li>
-                    <li onClick={ handleCLick } data-filter="pizza">Pizza</li>
-                    <li onClick={ handleCLick } data-filter="pasta">Pasta</li>
-                    <li onClick={ handleCLick } data-filter="fries">Fries</li>
+                    { Object.values(IMenuDataFilters).map(dataFilter => (
+                        <FilterButton
+                            key={ dataFilter }
+                            onClick={ handleCLick }
+                            dataFilter={ dataFilter }
+                            className={ dataFilter === searchParams.get('type') ? 'active' : '' }
+                        />
+                    )) }
                 </ul>
                 <div className="row grid">
                     { menu.map((item: IMenuItem) => (
@@ -56,14 +66,10 @@ export const MenuSection = () => {
 
                 <div className="btn-box">
                     { isShowMoreButtonVisible &&
-                        <a
-                            onClick={ handleNotify }
-                            href="components/Main/Pages/MainPage/MenuSection/MenuSection"
-                        >
-                            View More
-                        </a> }
+                        <YellowButton to={ "#" } className={ "" } text={ "View More" } onClick={ handleNotify }/>
+                    }
                 </div>
             </div>
         </section>
     );
-};
+});

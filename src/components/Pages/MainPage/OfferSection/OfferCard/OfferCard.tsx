@@ -1,4 +1,5 @@
 import React from 'react';
+import { YellowButton } from "../../../../Shared/YellowButton/YellowButton";
 
 interface OfferCardProps {
     name: string,
@@ -19,9 +20,7 @@ export const OfferCard = ({src, name, discount}: OfferCardProps) => {
                 <h6>
                     <span>{discount}%</span> Off
                 </h6>
-                <a href="components/Main/Pages/MainPage/OfferSection/OfferCard/OfferCard">
-                    Order Now
-                </a>
+                <YellowButton to={"#"} className={""} text={"Order now"} />
             </div>
         </div>
     );

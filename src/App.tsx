@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import './fonts/fontawesome-webfont.woff2';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import { FeaneRouter } from "./router/FeaneRouter";
 import { Notify } from "notiflix";
 import { getInitNotifyConfigs } from "./utils/initNotify";
+import { RouterProvider } from "react-router-dom";
+import { FeaneRouter } from "./router/FeaneRouter";
 
 export function App() {
     Notify.init(getInitNotifyConfigs());
@@ -15,7 +16,7 @@ export function App() {
     return (
         <>
             <Header/>
-            <FeaneRouter/>
+            <FeaneRouter />
             <Footer/>
         </>
     );

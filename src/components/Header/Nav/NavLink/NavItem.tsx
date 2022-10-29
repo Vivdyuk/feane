@@ -8,7 +8,6 @@ interface NavLinkProps {
 }
 
 export const NavItem = ({ name, link }: NavLinkProps) => {
-    console.log(link)
     return (
         <li className="nav-item">
             <NavLink className="nav-link nav"  to={link}>{ name.replaceAll("_", " ") } <span className="sr-only"></span></NavLink>
