@@ -1,0 +1,1 @@
+export const revertBooleanState = (prevState: boolean) => !prevState

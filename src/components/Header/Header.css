@@ -183,7 +183,6 @@
     transition: all 0.3s;
     position: relative;
     border-radius: 5px;
-    transition: all 0.3s;
 }
 
 .custom_nav-container .navbar-toggler span::before, .custom_nav-container .navbar-toggler span::after {
@@ -221,6 +220,7 @@
 
 .header_section {
     background-image: url('/src/images/hero-bg.jpg');
+    background-position-x: left;
     overflow: hidden;
 }
 
