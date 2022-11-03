@@ -6,6 +6,7 @@ import { getData } from "../../../../utils/fetchUtils";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { IMenuDataFilters } from "./IMenuDataFilters";
 import { FilterButton } from "../../../Shared/FilterButton/FilterButton";
+import './MenuSection.scss';
 
 export const MenuSection = React.memo(() => {
     const [isShowMoreButtonVisible, setIsShowMoreButtonVisible] = useState(true);

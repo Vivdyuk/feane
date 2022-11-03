@@ -1,6 +1,7 @@
 import React from 'react';
 import OwlCarousel from "react-owl-carousel";
 import { ISliderBanner, SliderBody } from "./SliderBody/SliderBody";
+import './SliderSecrion.scss';
 
 const owlCarouselConfig = {
     loop: true,

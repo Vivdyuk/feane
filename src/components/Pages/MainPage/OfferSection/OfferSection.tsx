@@ -1,5 +1,7 @@
 import React from 'react';
 import { OfferCard } from "./OfferCard/OfferCard";
+import './OfferSection.scss';
+
 interface IOffer {
     id: number,
     name: string,
