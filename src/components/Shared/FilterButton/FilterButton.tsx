@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from 'react';
-import { IMenuDataFilters } from "../../Pages/MainPage/MenuSection/IMenuDataFilters";
+import { IMenuDataFilters } from "../../sections/MenuSection/IMenuDataFilters";
 
 interface IFilterButtonProps {
     onClick: MouseEventHandler,

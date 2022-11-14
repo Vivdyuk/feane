@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css';
+import './Header.scss';
 import '../../App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav } from "./Nav/Nav";

@@ -1,7 +1,7 @@
 import React, { FormEventHandler, useCallback, useState } from 'react';
 import { GoogleMap, useJsApiLoader, GoogleMapProps } from '@react-google-maps/api';
-import { Input } from "../../../Shared/Input/Input";
-import { capitalize, INPUT_TYPES } from "../../../../utils/Stringutils";
+import { Input } from "../../Shared/Input/Input";
+import { capitalize, INPUT_TYPES } from "../../../utils/Stringutils";
 import './BookSection.scss'
 
 export const BookSection = () => {
@@ -41,7 +41,7 @@ export const BookSection = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form_container">
-                            <form action="">
+                            <form action="components/sections/BookSection/BookSection">
                                 { inputNames.map((name) => (
                                         <Input
                                             key={ name }

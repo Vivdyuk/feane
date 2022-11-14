@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutSection } from "../MainPage/AboutSection/AboutSection";
+import { AboutSection } from "../../sections/AboutSection/AboutSection";
 import FadeIn from "react-fade-in";
 
 export const AboutPage = () => {

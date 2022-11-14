@@ -4,7 +4,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'font-awesome/css/font-awesome.min.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { getData } from "../../../../utils/fetchUtils";
+import { getCustomers, getData } from "../../../utils/fetchUtils";
 import './ClientSection.scss';
 
 
@@ -43,12 +43,16 @@ const owlCarouselConfig = {
 }
 
 export const ClientSection = () => {
-    const [comments, setComments] = useState([]);
+    const [comments, setComments] = useState<IClientComment[]>([]);
 
     useEffect(() => {
-        getData('clients').then(setComments)
+        getCustomers(6).then(data => {
+            console.log(data);
+
+            return data;
+        }).then(setComments);
+        // getData('clients').then(setComments)
     }, [])
-    console.log(comments)
     return (
         <section className="client_section layout_padding-bottom">
             <div className="container">

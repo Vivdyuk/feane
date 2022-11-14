@@ -1,10 +1,10 @@
 import React from 'react';
-import { OfferSection } from "./OfferSection/OfferSection";
-import { MenuSection } from "./MenuSection/MenuSection";
-import { SliderSection } from "./SliderSection/SliderSection";
-import { AboutSection } from "./AboutSection/AboutSection";
-import { BookSection } from "./BookSection/BookSection";
-import { ClientSection } from "./ClientSection/ClientSection";
+import { OfferSection } from "../../sections/OfferSection/OfferSection";
+import { MenuSection } from "../../sections/MenuSection/MenuSection";
+import { SliderSection } from "../../sections/SliderSection/SliderSection";
+import { AboutSection } from "../../sections/AboutSection/AboutSection";
+import { BookSection } from "../../sections/BookSection/BookSection";
+import { ClientSection } from "../../sections/ClientSection/ClientSection";
 import FadeIn from "react-fade-in";
 
 export const MainPage = () => {

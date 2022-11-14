@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuSection } from "../MainPage/MenuSection/MenuSection";
+import { MenuSection } from "../../sections/MenuSection/MenuSection";
 import FadeIn from "react-fade-in";
 
 export const MenuPage = () => {

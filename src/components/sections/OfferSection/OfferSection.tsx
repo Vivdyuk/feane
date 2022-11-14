@@ -12,7 +12,7 @@ interface IOffer {
 }
 export const OfferSection = () => {
 
-    const  offers :Array<IOffer> = JSON.parse(JSON.stringify(require("../../../../jsons/offers.json"))).filter((offer:IOffer )=> offer.isActive);
+    const  offers :Array<IOffer> = JSON.parse(JSON.stringify(require("../../../jsons/offers.json"))).filter((offer:IOffer )=> offer.isActive);
     
     return (
         /** offer section */

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLinkEnums } from "./navLinkEnums";
-import { NavItem } from "./NavLink/NavItem";
+import { NavItem } from "./NavItem/NavItem";
 import { NavLink } from "react-router-dom";
-import './Nav.css';
+import './Nav.scss';
 import { YellowButton } from "../../Shared/YellowButton/YellowButton";
 import { revertBooleanState } from "../../../utils/utils";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { YellowButton } from "../../../../Shared/YellowButton/YellowButton";
+import { YellowButton } from "../../../Shared/YellowButton/YellowButton";
 
 interface OfferCardProps {
     name: string,
