@@ -10,28 +10,41 @@ export const getData = (endpoint: string, options?: any) => {
             Notify.failure(error.message);
 
 
-            return require(`jsons/${endpoint}`);
+            return require(`jsons/${ endpoint }`);
         })
 }
 
-export const getCustomers = (amount: number ) => {
-    return fetch(`https://randomuser.me/api/?results=${amount}`)
+export const getCustomers = (amount: number) => {
+    return fetch(`https://randomuser.me/api/?results=${ amount }`)
         .then(data => data.json())
         .then(data => {
             console.log(data.results)
             return data.results
         })
+        .then((data => data.map((user: any[]) => {
+            return {
+            // @ts-ignore
+                name: `${ user!.name.first } ${ user!.name.last }`,
+            // @ts-ignore
+                id: user!.id.value,
+            // @ts-ignore
+                imgUrl: user!.picture.medium,
+            // @ts-ignore
+                timestamp: user!.dob.date,
+            }
+        })))
         .catch(error => {
             console.log(error)
             Notify.failure(error.message);
-            return [];
+            return require('jsons/clients.json');
         })
-        .then((data => data.map(({name: {first, last}, id: {value: id}, picture: { thumb: imgUrl}, dob: {data: timestamp}}: any) =>({
-            name: `${first} ${last}`,
-            id,
-            imgUrl,
-            timestamp
-        }))));
+
+    /* ({
+                                     name: { first, last },
+                                     id: { value: id },
+                                     picture: { thumb: imgUrl },
+                                     dob: { data: timestamp }
+                                 }: any*/
 }
 
 export const prepareSearchParams = (oldSearchParams: IMenuItem, key: keyof IMenuItem, value?: string): IMenuItem => {

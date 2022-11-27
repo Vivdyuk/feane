@@ -1,34 +1,11 @@
-import React, { FormEventHandler, useCallback, useState } from 'react';
-import { GoogleMap, useJsApiLoader, GoogleMapProps } from '@react-google-maps/api';
-import { Input } from "../../Shared/Input/Input";
+import React from 'react';
+import { Input } from "../../shared/Input/Input";
 import { capitalize, INPUT_TYPES } from "../../../utils/Stringutils";
 import './BookSection.scss'
+import { Image } from "react-bootstrap";
 
 export const BookSection = () => {
     const inputNames = ['name', 'number', 'email']
-
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: ""
-    });
-
-    const [map, setMap] = useState<google.maps.Map | null>(null)
-
-    const center = {
-        lat: -3.745,
-        lng: -38.523
-    }
-
-    const onLoad = useCallback((map: google.maps.Map) => {
-        const bounds = new window.google.maps.LatLngBounds(center);
-        map.fitBounds(bounds);
-        setMap(map)
-    }, [])
-
-
-    const onUnmount = useCallback((map: google.maps.Map) => {
-        setMap(null)
-    }, [])
 
     return (
         <section className="book_section layout_padding">
@@ -84,16 +61,11 @@ export const BookSection = () => {
                     </div>
                     <div className="col-md-6">
                         <div className="map_container ">
-                            { isLoaded ?
-                                <GoogleMap
-                                    onLoad={ onLoad }
-                                    onUnmount={ onUnmount }
-                                >
-
-                                </GoogleMap>
-                                :
-                                <div id="googleMap"></div>
-                            }
+                            <Image
+                                src={'https://i.insider.com/602ee9ced3ad27001837f2ac?width=2000&format=jpeg&auto=webp'}
+                                roundedCircle={true}
+                                fluid={true}
+                            />
                         </div>
                     </div>
                 </div>

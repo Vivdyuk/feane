@@ -12,7 +12,6 @@ export interface IClientComment {
     id: number,
     imgUrl: string,
     name: string,
-    comment: string,
     timestamp: string | Date
 }
 

@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
-import { createBrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { NavLinkEnums } from '../components/Header/Nav/navLinkEnums';
 import FadeIn from 'react-fade-in';
-import { Loader } from '../components/Shared/Loader/Loader';
+import { Loader } from '../components/shared/Loader/Loader';
 
 const HomePageLazy = React.lazy(() => import('../components/Pages/MainPage/MainPage').then(module => ({default: module.MainPage})));
 const BookPageLazy = React.lazy(() => import('../components/Pages/BookPage/BookPage').then(module => ({default: module.BookPage})));

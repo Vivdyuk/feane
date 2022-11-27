@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { NavLinkEnums } from "../../Header/Nav/navLinkEnums";
-import { YellowButton } from "../../Shared/YellowButton/YellowButton";
+import { YellowButton } from "../../shared/YellowButton/YellowButton";
 import './AboutSection.scss';
 
 export const AboutSection = () => {

@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap");
+@import "~bootstrap/scss/bootstrap";
+
+@tailwind utilities;
+@tailwind components;
+@tailwind base;
+@tailwind screens;
+
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #0c0c0c;
@@ -99,7 +107,6 @@ a:focus {
 
 .contact_section .form_container input {
   width: 100%;
-  border: none;
   height: 50px;
   padding-left: 25px;
   background-color: transparent;
@@ -147,10 +154,9 @@ a:focus {
   padding: 10px 55px;
   background-color: #ffbe33;
   color: #ffffff;
-  border-radius: 0px;
+  border-radius: 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  border: none;
 }
 
 .contact_section .form_container button:hover {
@@ -241,7 +247,6 @@ a:focus {
   height: 30px;
   border-radius: 100%;
   background-color: #ffffff;
-  border-radius: 100%;
   margin: 0 2.5px;
   font-size: 18px;
 }
@@ -263,11 +268,14 @@ a:focus {
 .footer_section .footer-info p a {
   color: inherit;
 }
+
 /*# sourceMappingURL=style.css.map */
 
-@media (max-width: 1300px) {}
+@media (max-width: 1300px) {
+}
 
-@media (max-width: 1120px) {}
+@media (max-width: 1120px) {
+}
 
 @media (max-width: 992px) {
   .hero_area {
@@ -280,7 +288,7 @@ a:focus {
     align-items: center;
   }
 
-  .user_option{
+  .user_option {
     justify-content: center;
     margin-top: 15px;
   }
@@ -327,9 +335,11 @@ a:focus {
   }
 }
 
-@media (max-width: 576px) {}
+@media (max-width: 576px) {
+}
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+}
 
 @media (max-width: 430px) {
   .offer_section .box {
@@ -356,7 +366,7 @@ a:focus {
 }
 
 
-@media (min-width:576px) and (max-width:991px) {
+@media (min-width: 576px) and (max-width: 991px) {
   .rent_solution_container .col-md-4.col-sm-6 {
     float: left;
     width: 50%;
@@ -367,3 +377,4 @@ a:focus {
   transform: translateY(-88px);
   z-index: -1;
 }
+

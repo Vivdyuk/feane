@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { IMenuItem, MenuCard } from "./MenuCard/MenuCard";
 import { Notify } from "notiflix";
-import { YellowButton } from "../../Shared/YellowButton/YellowButton";
+import { YellowButton } from "../../shared/YellowButton/YellowButton";
 import { getData } from "../../../utils/fetchUtils";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { IMenuDataFilters } from "./IMenuDataFilters";
-import { FilterButton } from "../../Shared/FilterButton/FilterButton";
+import { FilterButton } from "../../shared/FilterButton/FilterButton";
 import './MenuSection.scss';
 
 export const MenuSection = React.memo(() => {

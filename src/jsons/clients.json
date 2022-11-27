@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "imgUrl": "client1.jpg",
+    "imgUrl": "images/client1.jpg",
     "name": "Moana Michell",
     "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
     "timestamp": "2022-06-30"
