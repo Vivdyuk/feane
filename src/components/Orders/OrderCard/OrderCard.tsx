@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {  Image, Stack } from "react-bootstrap";
 import { IOrder } from "../../sections/MenuSection/MenuCard/MenuCard";
 import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
-import { addOrder, decrementOrderAmount } from "../../../reducers/ordersReducer/ordersActions";
+import { addOrder, decrementOrderAmount, deleteOrder } from "../../../reducers/ordersReducer/ordersActions";
 import { defaultFlexProps } from "../../../utils/utils";
 
 interface IOrderCardProps {
@@ -11,8 +11,9 @@ interface IOrderCardProps {
     index: number
 }
 
-export const OrderCard = ({ order, index }: IOrderCardProps) => {
+export const OrderCard = memo(({ order, index }: IOrderCardProps) => {
     const dispatch = useDispatch();
+    console.log('rerendered');
     const { name, price, amount, imgUrl } = order;
 
     return (
@@ -39,14 +40,20 @@ export const OrderCard = ({ order, index }: IOrderCardProps) => {
                         variant={ 'outline-warning' }
                         onClick={ () => dispatch(decrementOrderAmount(order)) }
                     >
-                        -
+                        <i className={'fa fa-minus'}></i>
                     </Button>
                     <h2> { `-${amount}-` } </h2>
                     <Button
                         variant={ 'outline-warning' }
                         onClick={ () => dispatch(addOrder(order)) }
                     >
-                        +
+                        <i className={'fa fa-plus'}></i>
+                    </Button>
+                    <Button
+                        variant={ 'outline-warning' }
+                        onClick={ () => dispatch(deleteOrder(order.id)) }
+                    >
+                        <i className={'fa fa-crosshairs'}></i>
                     </Button>
                 </Stack>
             </td>
@@ -59,4 +66,4 @@ export const OrderCard = ({ order, index }: IOrderCardProps) => {
         </tr>
 
     );
-};
+}, (prevProps, nextProps) => prevProps.order.amount === nextProps.order.amount);

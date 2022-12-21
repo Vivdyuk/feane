@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { MouseEventHandler, useCallback } from 'react';
 import { FooterLinksEnum } from "./FooterLinksEnum";
 import { FooterSocialLink } from "./FooterSocialLink/FooterSocialLink";
 
 export const Footer = () => {
+    const handleLogoClick: MouseEventHandler = useCallback((event) => {
+        event.preventDefault();
+
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <footer className="footer_section">
             <div className="container">
@@ -36,7 +42,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-4 footer-col">
                         <div className="footer_detail">
-                            <a href="" className="footer-logo">
+                            <a href="#" className="footer-logo" onClick={handleLogoClick}>
                                 Feane
                             </a>
                             <p>

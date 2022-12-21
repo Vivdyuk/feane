@@ -5,12 +5,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
-import { Notify } from "notiflix";
-import { getInitNotifyConfigs } from "./utils/initNotify";
+import { Confirm, Notify, Report } from "notiflix";
+import { getInitNotiflixConfigs } from "./utils/initNotify";
 import { FeaneRouter } from "./router/FeaneRouter";
 
 export function App() {
-    Notify.init(getInitNotifyConfigs());
+    const { confirm, notify, report} = getInitNotiflixConfigs();
+    Notify.init(notify);
+    Confirm.init(confirm);
+    Report.init(report);
     return (
         <>
             <Header/>

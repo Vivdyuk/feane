@@ -24,13 +24,19 @@ export const ordersReducer = (state = initialState, { type, payload }: IOrdersRe
             Notify.success(`${ payload.name } was added to your shopping cart.`)
 
             return [...state, payload].sort((a, b) => a.name.localeCompare(b.name));
+
         case OrdersTypes.DELETE_ORDER:
+            console.log()
             return state.filter((order) => order.id !== payload.id);
+
         case OrdersTypes.DECREMENT_AMOUNT:
             return payload.amount
                 ? [...state.filter(el => el.id !== payload.id), payload
                 ].sort((a, b) => a.name.localeCompare(b.name))
-                : [...state.filter(el => el.id !== payload.id)]
+                : [...state.filter(el => el.id !== payload.id)];
+
+        case OrdersTypes.CLEAR_ORDERS:
+            return payload;
         default:
             return initialState;
     }

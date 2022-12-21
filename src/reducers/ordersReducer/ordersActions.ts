@@ -10,7 +10,7 @@ export const addOrder = (order: IOrder) => {
 }
 export const deleteOrder = (id: number) => ({
     type: OrdersTypes.DELETE_ORDER,
-    payload: id
+    payload: { id }
 })
 
 export const decrementOrderAmount = (order: IOrder) => {
@@ -20,5 +20,12 @@ export const decrementOrderAmount = (order: IOrder) => {
             ...order,
             amount: order.amount - 1
         }
+    }
+}
+
+export const clearOrders = () => {
+    return {
+        type: OrdersTypes.CLEAR_ORDERS,
+        payload: [],
     }
 }
