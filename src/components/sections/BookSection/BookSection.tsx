@@ -63,6 +63,8 @@ export const BookSection = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <div className="form_container">
+
+
                             <form onSubmit={ handleSubmit }>
                                 { inputNames.map((name) => (
                                         <Input

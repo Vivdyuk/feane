@@ -18,7 +18,7 @@ export const FeaneRouter = () => {
 
             <Suspense fallback={<Loader/>}>
                 <Routes>
-                    <Route path={HOME} element={<HomePageLazy/>}/>
+                    <Route path={HOME} element={<HomePageLazy/>} index/>
                     <Route path={MENU} element={<MenuPageLazy/>}/>
                     <Route path={`${MENU}?isActive=:isActive&type=:type`} element={<MenuPageLazy/>}/>
                     <Route path={ABOUT} element={<AboutPageLazy/>}/>
